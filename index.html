@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Statistika: Pertemuan 09</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="oleh Riana Hadiana" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link href="libs/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
+    <link href="libs/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/fabric-4.3.1/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble-0.0.1/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble-0.0.1/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <script src="libs/xaringanExtra-webcam-0.0.1/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <script src="libs/mark.js-8.11.1/mark.min.js"></script>
+    <link href="libs/xaringanExtra-search-0.0.1/search.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-search-0.0.1/search.js"></script>
+    <script>window.addEventListener('load', function() { window.xeSearch = new RemarkSearch({"position":"bottom-left","caseSensitive":false,"showIcon":true,"autoSearch":true}) })</script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Statistika: Pertemuan 09
+## Pendugaan Parameter (2)
+### oleh Riana Hadiana
+### Universitas Serang Raya
+
+---
+
+
+
+
+
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(Unsera.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+
+
+
+.pull-left[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+![](gb_01.jpg)
+
+]
+
+.pull-right[
+&lt;br&gt;
+# **.purple[Outline]**
+
+- ##Pendahuluan
+- ##Penduga Titik
+- ##Penduga Selang
+- ##Ukuran Contoh Optimum
+
+]
+
+---
+
+.pull-left[
+
+### **Pendahuluan**
+
+.pull.center[
+
+![](gb_02.jpg)
+
+
+
+]
+
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+### Data Contoh:
+
+- ### Statistika Deskriptif (.red[**UTS**])
+
+  - Eksplorasi Data
+  - Ukuran Penyebaran dan Pemusatan Data
+  
+- ### Statistika Inferensia (.red[**UAS**])
+
+  - Pendugaan Parameter
+  - Pengujian Hipotesis
+  - Analisis Data
+
+]
+
+---
+
+.pull-left[
+.pull.center[
+![](gb_03.jpg)
+]
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+### Statistik merupakan .red[**PENDUGA**] bagi parameter populasi. 
+### Diperlukan pengetahuan tentang sebaran penarikan contoh untuk menentukan .red[**PENDUGA tak bias**] dan mempunyai .red[**ragam minimum**]
+
+
+
+]
+
+---
+.pull-left[
+
+### Statistik = PENDUGA  parameter
+.pull.center[
+
+![](gb_04.jpg)
+]
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+### .red[**Penduga Titik**]: nilai parameter diduga oleh sebuah nilai statistik
+
+### Karena dihasilkan dari contoh, .red[Penduga Titik] bisa berbeda dengan nilai parameter
+
+### .red[**Penduga Titik**]: **Tak Bias** dan **Ragam Minimum**
+]
+
+
+---
+
+.pull.center[
+
+![](gb_05.jpg)
+
+
+]
+
+
+---
+
+.pull.center[
+## Pendugaan Parameter (Penduga Titik)
+]
+
+.pull-left[
+
+## .red[1 Populasi]
+
+### `\(\bar{x} \text{: penduga } \mu\)`
+
+### `\(\hat{p} \text{: penduga } p\)`
+
+### `\(s^2 \text{: penduga } \sigma^2\)`
+
+]
+
+.pull-right[
+
+
+## .red[2 Populasi]
+
+### `\(\bar{x}_1-\bar{x}_2 \text{: penduga } \mu_1-\mu_2\)`
+
+### `\(\hat{p}_1-\hat{p}_2 \text{: penduga } p_1-p_2\)`
+
+### `\(\dfrac{s_1^2}{s_2^2} \text{: penduga } \dfrac{\sigma_1^2}{\sigma_2^2}\)`
+
+]
+
+---
+
+.pull-left[
+
+&lt;br&gt;&lt;br&gt;
+![](gb_04.jpg)
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+### Penduga titik tidak selalu tepat menduga parameter populasi, maka digunakan pendugaan dalam bentuk selang interval
+
+### Dalam setiap pendugaan mengandung PELUANG kesalahan
+
+### Penduga selang `\(\rightarrow\)` konsep peluang `\(\rightarrow\)` .red[SELANG KEPERCAYAAN (CONFIDENCE INTERVAL)]
+
+]
+
+---
+
+.pull.center[
+# Penduga Selang
+]
+
+### **Selang Kepercayaan**
+
+- ### Suatu nilai `\(a\)` dan `\(b\)` dengan `\(a&lt;b\)`, yang memuat parameter dengan peluang `\(\left(1 − \alpha\right)\)` (dengan `\(\alpha\)` merupakan peluang kesalahan yang ditoleransi)
+
+### **Selang kepercayaan `\(\left(1 − \alpha\right)\)` **
+
+- ### `\(P(a&lt; \text{parameter} &lt;b)=1-\alpha\)`
+
+- ### Berarti: apabila dilakukan percobaan sebanyak `\(k\)` kali untuk dibuat selang kepercayaan, maka ada sebanyak  `\(\left(1 − \alpha\right) \times k\)` selang yang terbentuk yang memuat parameter
+
+---
+
+.pull.center[
+
+### **Jenis Penduga Selang**
+
+![](gb_06.jpg)
+]
+
+---
+
+class: inverse, center, middle
+
+# Penduga Selang untuk Rata-Rata `\(\left(\mu\right)\)` 1 Populasi
+
+---
+
+.pull.center[
+## Dugaan Selang Kepercayaan `\(\left(1 − \alpha\right)\)` bagi `\(\mu\)`
+]
+
+.pull.center[
+
+## `\(\sigma^2\)` .red[diketahui]
+
+### `\(\bar{x}-z_{\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}}&lt;\mu&lt;\bar{x}+z_{\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}}\)`
+
+
+## `\(\sigma^2\)` .red[tidak diketahui]
+
+### `\(\bar{x}-t_{\frac{\alpha}{2}(n-1)} \dfrac{s}{\sqrt{n}}&lt;\mu&lt;\bar{x}+t_{\frac{\alpha}{2}(n-1)} \dfrac{s}{\sqrt{n}}\)`
+
+]
+
+.pull-right[
+
+]
+---
+
+.pull-left[
+
+**Contoh**
+
+Sebuah mesin minuman ringan diatur sehingga banyaknya minuman yang dikeluarkan menyebar normal dengan simpangan baku 1.5 desiliter.
+Tentukan Selang kepercayaan 95% bagi rata-rata banyaknya minuman yang dikeluarkan oleh mesin ini, bila suatu contoh acak 36 gelas mempunyai isi rata-rata 22.5 desiliter.
+
+___
+
+Diketahui: `\(\sigma=1.5\)`; `\(\alpha = 5\%\)`; `\(n=36\)`; `\(\bar{x}=22.5\)`
+
+Selang Kepercayaan (SK) 95% bagi `\(\mu\)` ( `\(\sigma\)` diketahui)
+
+`$$\begin{align*}
+\bar{x}-z_{\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}}&amp;&lt;\mu&lt;\bar{x}+z_{\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}} \\
+22.5-z_{0.025} \dfrac{1.5}{\sqrt{36}} &amp;&lt;\mu&lt;22.5+z_{0.025} \dfrac{1.5}{\sqrt{36}} \\
+22.5-1.96 (0.25) &amp;&lt;\mu&lt;22.5+1.96 (0.25) \\
+22.01 &amp;&lt;\mu&lt;22.99
+\end{align*}$$`
+
+Jadi kita percaya bahwa pada selang 22.01 sampai 22.99 dl memuat rataan banyaknya minuman yang dikeluarkan mesin pada `\(\alpha=5\%\)`
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Latihan Mandiri**
+
+Suatu contoh acak 36 mahasiswa tingkat akhir menghasilkan nilai tengah dan simpangan baku nilai mutu rata-rata sebesar 2.6 dan 0.3.
+
+Buat selang kepercayaan 95% bagi nilai tengah seluruh mahasiswa tingkat akhir!
+
+]
+---
+
+.pull-left[
+## Ukuran Contoh Optimum
+
+## `\(n=\dfrac{z_\frac{\alpha}{2}^2 \sigma^2}{e^2}\)`
+
+
+### `\(n=\)` ukuran contoh
+### `\(\sigma^2=\)` ragam populasi
+### `\(e=\)` batas kesalahan pendugaan (_bound of error_)
+
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Contoh**
+
+Sebuah mesin minuman ringan diatur sehingga banyaknya minuman yang dikeluarkan menyebar normal dengan simpangan baku 1.5 desiliter.
+Berapa ukuran contoh yang diperlukan pada tingkat kepercayaan 95% untuk rata-rata banyaknya minuman yang dikeluarkan oleh mesin bila rata-rata contoh berada pada 0.3 desiliter dari nilai tengah sebenarnya?
+
+___
+
+`\(n=\dfrac{z_\frac{\alpha}{2}^2 \sigma^2}{e^2}=\dfrac{(1.96)^2 (1.5)^2}{(0.3)^2}=96.04\approx 97\)`
+
+]
+
+---
+
+.pull-left[
+
+**Latihan Mandiri**
+
+Seorang ahli akan memperkirakan rata-rata telur ayam di suatu kota besar. Berdasarkan pengalamana masa lampau diketahui besarnya simpangan baku Rp1.000 (seribu rupiah). 
+
+Ahli tersebut ingin dengan tingkat kepercayaan 95% untuk pendugaan rata-rata harga telur tidak lebih atau kurang dari Rp300 dari rata-rata harga telur sesungguhnya.
+
+Berapa banyak penjual telur ayam yang harus diselidiki?
+
+___
+
+
+]
+
+---
+
+class: inverse, center, middle
+
+# Penduga Selang untuk Rata-Rata `\(\left(\mu\right)\)` 2 Populasi
+
+---
+
+.pull.center[
+## Dugaan Selang Kepercayaan `\(\left(1 − \alpha\right)\)` bagi `\(\mu_1-\mu_2\)`
+]
+
+.pull.center[
+
+## `\(\sigma_1^2\)` dan `\(\sigma_2^2\)` .red[diketahui]
+
+`\(\left(\bar{x}_1-\bar{x}_2\right)-z_{\frac{\alpha}{2}} \sqrt{\dfrac{\sigma^2_1}{n_1}+\dfrac{\sigma^2_2}{n_2}}&lt;\mu_1-\mu_2&lt;\left(\bar{x}_1-\bar{x}_2\right)+z_{\frac{\alpha}{2}} \sqrt{\dfrac{\sigma^2_1}{n_1}+\dfrac{\sigma^2_2}{n_2}}\)`
+
+]
+
+
+---
+
+.pull.center[
+## Dugaan Selang Kepercayaan `\(\left(1 − \alpha\right)\)` bagi `\(\mu_1-\mu_2\)`
+]
+
+.pull.center[
+
+## `\(\sigma_1^2\)` dan `\(\sigma_2^2\)` .red[tidak diketahui] dan diasumsikan sama
+
+`\(\left(\bar{x}_1-\bar{x}_2\right)-t_{\frac{\alpha}{2} \left(v\right)} \sqrt{s^2_{gab}\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}&lt;\mu_1-\mu_2&lt;\left(\bar{x}_1-\bar{x}_2\right)+t_{\frac{\alpha}{2} \left(v\right)} \sqrt{s^2_{gab}\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}\)`
+
+`\(s^2_{gab}=\dfrac{\left(n_1-1\right)s^2_1+\left(n_2-1\right)s^2_2}{n_1+n_2-2}\)`
+
+dan
+
+`\(v=n_1+n_2-2\)`
+
+]
+
+---
+
+.pull.center[
+## Dugaan Selang Kepercayaan `\(\left(1 − \alpha\right)\)` bagi `\(\mu_1-\mu_2\)`
+]
+
+.pull.center[
+
+## `\(\sigma_1^2\)` dan `\(\sigma_2^2\)` .red[tidak diketahui] dan diasumsikan .red[**beda**]
+
+`\(\left(\bar{x}_1-\bar{x}_2\right)-t_{\frac{\alpha}{2} \left(v\right)} \sqrt{\left(\dfrac{s^2_1}{n_1}+\dfrac{s^2_2}{n_2}\right)}&lt;\mu_1-\mu_2&lt;\left(\bar{x}_1-\bar{x}_2\right)+t_{\frac{\alpha}{2} \left(v\right)} \sqrt{\left(\dfrac{s^2_1}{n_1}+\dfrac{s^2_2}{n_2}\right)}\)`
+
+`\(v=\dfrac{\left(\dfrac{s^2_1}{n_1}+\dfrac{s^2_2}{n_2}\right)^2}{\dfrac{\left(\dfrac{s^2_1}{n_1}\right)^2}{\left(n_1-1\right)}+\dfrac{\left(\dfrac{s^2_2}{n_2}\right)^2}{n_2-1}}\)`
+
+]
+
+---
+
+.pull-left[
+
+**Contoh**
+
+Suatu perusahaan taksi sedang mengevaluasi apakah akan menggunakan Ban A atau Ban B. Untuk menduga beda kedua merk tersebut, dilakukan percobaan dengan mengambil 12
+ban untuk masing-masing-masing merk. Semua ban tersebut dicoba, dan dicatat lama waktunya sampai harus diganti (dalam hari).
+
+| Sample | N | Mean | StDev |
+|:-      | :-: |:-: | :-: |
+| 1 | 12 | 36300 | 5000 |
+| 2 | 12 | 38100 | 6100 |
+
+Buatlah SK 95% bagi selisih rataan ban tersebut jika .red[**ragam populasi diasumsikan sama**].
+___
+
+Diketahui: &lt;br&gt; `\(n_1=12\)`; `\(\bar{x}_1=36300\)`; dan `\(s^2_1=5000\)` &lt;br&gt;
+`\(n_2=12\)`; `\(\bar{x}_2=38100\)`; dan `\(s^2_2=6100\)`
+
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Hitung terlebih dahulu nilai `\(s^2_{gab}\)` karena ragam populasi tidak diketahui dan diasumsikan sama.
+
+`\(s^2_{gab}=\dfrac{\left(n_1-1\right)s^2_1+\left(n_2-1\right)s^2_2}{n_1+n_2-2}=5550\)`
+
+`\(v=n_1+n_2-2=12+12-2=22\)`
+
+`\(t_{\frac{\alpha}{2}(v)}=t_{\frac{0.05}{2}(22)}=t_{0.025(22)}=2.07\)`
+
+Hitung:
+
+`\(\left(\bar{x}_1-\bar{x}_2\right)-t_{\frac{\alpha}{2} \left(v\right)} \sqrt{s^2_{gab}\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}=\dots\)`
+
+dan
+
+`\(\left(\bar{x}_1-\bar{x}_2\right)+t_{\frac{\alpha}{2} \left(v\right)} \sqrt{s^2_{gab}\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}=\dots\)` dst
+]
+
+---
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Latihan Mandiri**
+
+Suatu penelitian dilakukan untuk mengetahui rataan waktu yang dibutuhkan (dalam hari) untuk sembuh dari sakit flu. Terdapat dua grup, satu grup sebagai kontrol dan grup lainnya diberi vitamin C dengan dosis 4 mg/hari. Statistik yang diperoleh dari peneltian tersebut sebagai berikut :
+
+![](gb_09.jpg)
+
+Buatlah selang kepercayaan 95% bagi beda rata-rata waktu yang diperlukan untuk sembuh dari group kontrol dibandingkan dengan yang diberi vitamin C (4 mg/hari)! Asumsikan data menyebar normal dan .red[**ragam populasi diasumsikan sama**].
+
+
+---
+
+class: inverse, center, middle
+
+# Penduga Selang untuk Selisih Rata-Rata `\(\left(\mu\right)\)` 2 Populasi Tidak Saling Bebas (Berpasangan)
+
+---
+
+.pull.center[
+![](gb_07.jpg)
+]
+
+
+---
+
+.pull-left[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+| Pasangan Data | 1 | 2 | 3 | ... | `\(n\)` |
+|:---           |:--:|:-:|:-:|:-:|:-:|
+| Data Awal ( `\(X_1\)` )| `\(x_{11}\)` | `\(x_{12}\)` | `\(x_{13}\)` | ... | `\(x_{1n}\)` |
+| Data Akhir ( `\(X_2\)` )| `\(x_{21}\)` | `\(x_{22}\)` | `\(x_{23}\)` | ... | `\(x_{2n}\)` |
+|  `\(d = X_1 - X_2\)` | `\(d_1\)` | `\(d_2\)` | `\(d_3\)` | ... | `\(d_n\)` |
+
+.pull.center[
+`\(s^2_d=\dfrac{\sum_{i}(d_i-\bar{d})^2}{n-1}\)`
+
+`\(d_i=x_{1i}-x_{2i}\)`
+
+`\(\bar{d}=\dfrac{\sum_{i}d_i}{n}\)`
+]
+]
+
+--
+
+.pull-right[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Dugaan Selang Kepercayaan `\(\left(1 − \alpha\right)\)` bagi `\(\mu_d\)` adalah sebagai berikut.
+
+`$$\bar{d}-t_{\frac{\alpha}{2}(n-1)}\dfrac{s_d}{\sqrt{n}}&lt;\mu_d&lt;\bar{d}+t_{\frac{\alpha}{2}(n-1)}\dfrac{s_d}{\sqrt{n}}$$`
+
+]
+
+---
+
+**Contoh**
+
+Suatu klub kesegaran jasmani ingin mengevaluasi program diet, kemudian dipilih secara acak &lt;br&gt;10 orang anggotanya untuk mengikuti program diet tersebut selama 3 bulan. Data yang diambil &lt;br&gt;adalah berat badan sebelum dan sesudah program diet dilaksanakan, yaitu:
+
+![](gb_08.jpg)
+
+Dugalah selang kepercayaan 95% bagi rata-rata selisih berat badan tersebut!
+___
+
+--
+.pull-left[
+
+`$$\begin{align*}
+\bar{d}-t_{\frac{\alpha}{2}(n-1)}\dfrac{s_d}{\sqrt{n}}&amp;&lt;\mu_d&lt;\bar{d}+t_{\frac{\alpha}{2}(n-1)}\dfrac{s_d}{\sqrt{n}} \\
+5.1-t_{0.025(9)}\dfrac{1.197}{\sqrt{10}}&amp;&lt;\mu_d&lt;5.1+t_{0.025(9)}\dfrac{1.197}{\sqrt{10}} \\
+4.24 &amp;&lt;\mu_d&lt;5.96
+\end{align*}$$`
+
+]
+
+--
+
+.pull-right[
+Jadi kita percaya bahwa pada selang 4.24 sampai 5.96 memuat rata-rata selisih berat badan sebelum dan setelah program diet pada `\(\alpha=5\%\)`
+]
+
+---
+
+class: inverse, center, middle
+
+# Thank you!
+# See you next week
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
