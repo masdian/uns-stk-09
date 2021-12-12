@@ -171,19 +171,125 @@ Hal tersebut berlaku pula pada Selang Kepercayaan pada .red[**data berpasangan**
 
 class: inverse, center, middle
 
-# Penduga Selang untuk Proporsi
+# Penduga Selang untuk Proporsi 1 Populasi
+
+---
+
+.pull.center[
+### $p$ diduga oleh $\hat{p}$
+
+![](gb_02.jpg)
+]
+
+---
+
+.pull.center[
+### Dugaan Selang Kepercayaan $\left(1 − \alpha\right)$ bagi $p$
+
+![](gb_03.jpg)
+]
+
+---
+
+.pull.center[
+### Dugaan Selang Kepercayaan $\left(1 − \alpha\right)$ bagi $p$
+]
+
+## $$\hat{p}-z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}<p<\hat{p}+z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$$
+
+---
+
+.pull-left[
+
+**Contoh**
+
+Sebuah lembaga survey mengambil contoh acak sebanyak 2000 responden dengan diperoleh hasil 1120 diantaranya puas terhadap kinerja poliklinik $A$.
+
+Buatlah selang kepercayaan 95% bagi proporsi responden yang puas.
+___
+
+Diketahui:<br>
+$n=2000$ dan $\sum{x_i}=1120$, maka <br>
+$\hat{p}=\dfrac{\sum{x_i}}{n}=\dfrac{1120}{2000}=0.56$
+
+
+$$\begin{align*}
+\hat{p}-z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}&=0.56-1.96\sqrt{\dfrac{0.56(1-0.56)}{2000}} \\
+&=0.56-0.02 \\
+&=0.54
+\end{align*}$$
+]
+
+.pull-right[
+
+<br><br><br>
+
+$$\begin{align*}
+\hat{p}+z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}&=0.56+1.96\sqrt{\dfrac{0.56(1-0.56)}{2000}} \\
+&=0.56+0.02 \\
+&=0.58
+\end{align*}$$
+
+Selang Kepercayaan 95% bagi proporsi responden yang puas adalah
+
+$$\begin{align*}
+\hat{p}-z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}&<p<\hat{p}+z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} \\
+0.54&<p<0.58
+\end{align*}$$
+
+Jadi, kita percaya bahwa pada selang 0.54 sampai 0.58 memuat proporsi
+responden puas terhadap kinerja Poliklinik $A$ pada $\alpha=5\%$, .red[**atau**]
+
+Kita percaya bahwa pada selang 0.54 sampai 0.58 memuat proporsi
+responden puas terhadap kinerja Poliklinik $A$ dengan peluang $95\%$
+]
+
+---
+
+.pull-left[
+**Latihan 1**
+
+The U.S News and World Report menyatakan bahwa suatu obat baru yang diekstrak dari suatu jamur, cyclosporin A, mampu meningkatkan tingkat kesuksesan dalam operasi transplantasi organ.Menurut artikel tersebut, 32 pasien yang menjalani operasi transplantasi ginjal diberikan obat baru tersebut. Dari 32 pasien tersebut, 19 diantaranya sukses dalam operasi transpalntasi ginjal.
+
+Tentukan selang kepercayaan 95% bagi $p$ (proporsi pasien yang sukses
+dalam operasi dengan menggunakan obat baru)
+___
+
+**Latihan 2**
+
+Dari 100 buah barang yang dipilih secara acak ternyata ada 30 buah barang yang rusak. Tentukan penduga selang bagi $p$ (proporsi barang yang rusak) dengan tingkat keyakinan 95% 
+]
+
+.pull-right[
+<br><br><br>
+
+**Latihan 3**
+
+Sorang manajer di sebuah bank ingin mengetahui persentase nasabah yang tidak puas dengan pelayanan yang diberikan oleh pegawainya. Oleh karena itu, dilakukan penelitian terhadap 250 nasabah yang dipilih secara acak dan terdapat 60 orang yang tidak puas. Dengan tingkat keyakinan 95%, tentukan penduga selang bagi $p$ (proporsi nasabah yang tidak puas).
+]
+---
+
+class: inverse, center, middle
+
+# Penduga Selang untuk Selisih Proporsi $(p_1-p_2)$ <br> dari 2 Populasi
+
+---
+
+.pull.center[
+### Dugaan Selang Kepercayaan $\left(1 − \alpha\right)100\%$ bagi $p_1-p_2$
+]
+
+<br><br><br>
+
+$$(\hat{p}_1-\hat{p}_2)-z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\dfrac{\hat{p}_2(1-\hat{p}_2)}{n_2}}<p<(\hat{p}_1-\hat{p}_2)+z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\dfrac{\hat{p}_2(1-\hat{p}_2)}{n_2}}$$
+
+---
 
 
 ---
 
 
-
 ---
-
-
-
----
-
 
 
 ---
