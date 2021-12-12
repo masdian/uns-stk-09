@@ -91,164 +91,97 @@ top:1em;right:1em;
 &lt;br&gt;
 # **.purple[Outline]**
 
-- ##Pendahuluan
-- ##Penduga Titik
-- ##Penduga Selang
-- ##Ukuran Contoh Optimum
+- ##Interpretasi Selang Kepercayaan
+- ##Penduga Selang untuk Proporsi
+- ##Penduga Selang untuk Ragam
 
 ]
 
 ---
 
-.pull-left[
-
-### **Pendahuluan**
-
 .pull.center[
 
-![](gb_02.jpg)
+## **Selang Kepercayaan 95%**
+
+![](CI Illustration.png)
 
 
 
 ]
+
+---
+
+.pull.center[
+
+### **Interpretasi Selang Kepercayaan**
+
+]
+
+.pull-left[
+
+**Slide 13 Pertemuan 08**
+
+Selang Kepercayaan (SK) 95% bagi `\(\mu\)` adalah
+`$$22.01 &lt; \mu &lt; 22.99$$`
+
+**Kesimpulan**: 
+1. Kita percaya bahwa pada selang 22.01 sampai 22.99 desiliter .red[**memuat**] rataan banyaknya minuman yang dikeluarkan mesin dengan peluang 95%, .red[**_atau_**]
+
+1. Kita percaya bahwa pada selang 22.01 sampai 22.99 desiliter .red[**tidak memuat**] rataan banyaknya minuman yang dikeluarkan mesin dengan peluang 5%
 
 ]
 
 .pull-right[
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**Slide 20 Pertemuan 08**
 
-### Data Contoh:
+Selang Kepercayaan (SK) 95% bagi `\(\mu_1-\mu_2\)` adalah
+`$$-1863 &lt; \mu_1-\mu_2 &lt; -1737$$`
+**Kesimpulan**: 
+1. Kita percaya bahwa pada selang `\(-1863\)` sampai `\(-1737\)` jam .red[**memuat**] selisih rataan pemakaian ban dengan peluang 95%, .red[**_atau_**]
 
-- ### Statistika Deskriptif (.red[**UTS**])
-
-  - Eksplorasi Data
-  - Ukuran Penyebaran dan Pemusatan Data
-  
-- ### Statistika Inferensia (.red[**UAS**])
-
-  - Pendugaan Parameter
-  - Pengujian Hipotesis
-  - Analisis Data
-
-]
-
----
-
-.pull-left[
-.pull.center[
-![](gb_03.jpg)
-]
-]
-
-.pull-right[
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-### Statistik merupakan .red[**PENDUGA**] bagi parameter populasi. 
-### Diperlukan pengetahuan tentang sebaran penarikan contoh untuk menentukan .red[**PENDUGA tak bias**] dan mempunyai .red[**ragam minimum**]
-
+1. Kita percaya bahwa pada selang `\(-1863\)` sampai `\(-1737\)` jam .red[**tidak memuat**] selisih rataan pemakaian ban dengan peluang 5%
 
 
 ]
 
 ---
-.pull-left[
-
-### Statistik = PENDUGA  parameter
-.pull.center[
-
-![](gb_04.jpg)
-]
-]
-
-.pull-right[
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-### .red[**Penduga Titik**]: nilai parameter diduga oleh sebuah nilai statistik
-
-### Karena dihasilkan dari contoh, .red[Penduga Titik] bisa berbeda dengan nilai parameter
-
-### .red[**Penduga Titik**]: **Tak Bias** dan **Ragam Minimum**
-]
-
-
----
 
 .pull.center[
 
-![](gb_05.jpg)
+### **Interpretasi Selang Kepercayaan**
 
-
-]
-
-
----
-
-.pull.center[
-## Pendugaan Parameter (Penduga Titik)
 ]
 
 .pull-left[
 
-## .red[1 Populasi]
+**Slide 25 Pertemuan 08**
 
-### `\(\bar{x} \text{: penduga } \mu\)`
+Selang Kepercayaan 95% bagi rata-rata selisih berat badan sebelum dan sesudah program diet `\((\mu_D)\)` adalah
 
-### `\(\hat{p} \text{: penduga } p\)`
+`$$4.24 &lt; \mu_1-\mu_2 &lt; 5.96$$`
 
-### `\(s^2 \text{: penduga } \sigma^2\)`
+**Kesimpulan**: 
+1. Kita percaya bahwa pada selang `\(4.24\)` sampai `\(5.96\)` kg **memuat** rataan selisih berat badan sebelum dan sesudah program diet dengan peluang 95%, .red[**_atau_**]
+
+1. Kita percaya bahwa pada selang `\(4.24\)` sampai `\(5.96\)` kg **tidak memuat** rataan selisih berat badan sebelum dan sesudah program diet dengan peluang 5%
 
 ]
 
 .pull-right[
 
+Pada Selang Kepercayaan untuk selisih rataan dari 2 populasi yang saling bebas:
 
-## .red[2 Populasi]
+1. `\(\text{positif (+)} &lt; \mu_1-\mu_2 &lt;\text{positif (+)}\)` &lt;br&gt;
+maka rataan populasi 1 .red[**lebih besar**] dari rataan populasi 2
+1. `\(\text{negatif (-)} &lt; \mu_1-\mu_2 &lt;\text{negatif (-)}\)` &lt;br&gt;
+maka rataan populasi 1 .red[**lebih kecil**] dari rataan populasi 2
+1. `\(\text{negatif (-)} &lt; \mu_1-\mu_2 &lt;\text{positif (+)}\)` &lt;br&gt;
+maka rataan populasi 1 .red[**tidak berbeda**] dari rataan populasi 2
 
-### `\(\bar{x}_1-\bar{x}_2 \text{: penduga } \mu_1-\mu_2\)`
-
-### `\(\hat{p}_1-\hat{p}_2 \text{: penduga } p_1-p_2\)`
-
-### `\(\dfrac{s_1^2}{s_2^2} \text{: penduga } \dfrac{\sigma_1^2}{\sigma_2^2}\)`
-
-]
-
----
-
-.pull-left[
-
-&lt;br&gt;&lt;br&gt;
-![](gb_04.jpg)
-]
-
-.pull-right[
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-### Penduga titik tidak selalu tepat menduga parameter populasi, maka digunakan pendugaan dalam bentuk selang interval
-
-### Dalam setiap pendugaan mengandung PELUANG kesalahan
-
-### Penduga selang `\(\rightarrow\)` konsep peluang `\(\rightarrow\)` .red[SELANG KEPERCAYAAN (CONFIDENCE INTERVAL)]
+Hal tersebut berlaku pula pada Selang Kepercayaan pada .red[**data berpasangan**]
 
 ]
-
----
-
-.pull.center[
-# Penduga Selang
-]
-
-### **Selang Kepercayaan**
-
-- ### Suatu nilai `\(a\)` dan `\(b\)` dengan `\(a&lt;b\)`, yang memuat parameter dengan peluang `\(\left(1 − \alpha\right)\)` (dengan `\(\alpha\)` merupakan peluang kesalahan yang ditoleransi)
-
-### **Selang kepercayaan `\(\left(1 − \alpha\right)\)` **
-
-- ### `\(P(a&lt; \text{parameter} &lt;b)=1-\alpha\)`
-
-- ### Berarti: apabila dilakukan percobaan sebanyak `\(k\)` kali untuk dibuat selang kepercayaan, maka ada sebanyak  `\(\left(1 − \alpha\right) \times k\)` selang yang terbentuk yang memuat parameter
 
 ---
 
@@ -257,7 +190,27 @@ top:1em;right:1em;
 ### **Jenis Penduga Selang**
 
 ![](gb_06.jpg)
+
 ]
+
+---
+
+class: inverse, center, middle
+
+# Penduga Selang untuk Proporsi
+
+
+---
+
+
+
+---
+
+
+
+---
+
+
 
 ---
 
