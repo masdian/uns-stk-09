@@ -305,7 +305,7 @@ Seorang kepala pabrik yang bertanggung jawab tentang mutu barang ingin mengestim
 ___
 
 Diketahui:<br>
-$alpha=5\%$ maka $z_\frac{\alpha}{2}=z_{0.025}=1.645$ <br>
+$\alpha=5\%$ maka $z_\frac{\alpha}{2}=z_{0.025}=1.645$ <br>
 $p$ tidak diketahui, maka 
 
 $$n=p(1-p)\left(\dfrac{z_\frac{\alpha}{2}}{e}\right)^2=0.5(1-0.5)\left(\frac{1.645}{0.09}\right)^2=84$$
