@@ -86,6 +86,54 @@ xaringanExtra::use_search(show_icon = TRUE)
 ---
 
 .pull.center[
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+if(!require(BSDA)){
+  install.packages("BSDA")
+  library(BSDA)
+}
+
+sk <- function(alpha, sampel, mean, sd, attempts){
+  curve(expr = dnorm(x, mean = mean, sd = sd), from = mean - 4*sd, to = mean + 4*sd,
+        main = paste0("SK ",(1-alpha)*100,"% hasil simulasi dari sampel berukuran = ",sampel),
+        xlab = "Data", ylab = "Densitas",
+        lwd=2, col="blue")
+  abline(v = mean, col = "purple", lwd = 1)
+  a <- dnorm(seq(mean-4*sd, mean+4*sd, length = 100), mean = mean, sd = sd)
+  b <- a[which.max(a)]
+  failed_to_contain <- 0
+  for (i in 1:attempts) {
+    col <- rgb(0,0,0,0.5)
+    choc.batch <- rnorm(n = sampel, mean = mean, sd = sd) 
+    myCI <- BSDA::z.test(choc.batch, sigma.x = sd, conf.level = 1-alpha)$conf.int
+    if (min(myCI) > mean | max(myCI) < mean) {
+      failed_to_contain <- failed_to_contain + 1
+      col <- rgb(1,0,0,1)
+      segments(min(myCI), b * i / attempts,
+               max(myCI), b * i / attempts,
+               lwd = 2, col = col)
+    } else {
+      segments(min(myCI), b * i / attempts,
+               max(myCI), b * i / attempts,
+               lwd = 1, col = col)
+    }
+    
+  }
+}
+
+tiff("SK_95.tiff", width = 8, height = 5, units = 'in', 
+     res = 1200, compression = 'lzw')
+set.seed(16)
+sk(0.05, 30, 80, 10, 100)
+
+dev.off()
+
+```
+![](SK_95.jpg)
+]
+
+---
+
+.pull.center[
 
 ### **Interpretasi Selang Kepercayaan**
 
@@ -300,7 +348,7 @@ Dari suatu contoh acak 400 perokok, 86 ternyata lebih menyukai merk $X$. Buat Se
 
 **Contoh**
 
-Seorang kepala pabrik yang bertanggung jawab tentang mutu barang ingin mengestimasi besarnya proporsi/persentase barang yang rusak. Dia ingin 95% yakin bahwa pendugaan proporsi $\hat{p}$ berada 0.09 di sekitar proporsi populasi sebenarnya. Tentukan banyaknya contoh yang diperlukan.
+Seorang kepala pabrik yang bertanggung jawab tentang mutu barang ingin mengestimasi besarnya proporsi/persentase barang yang rusak. Dia ingin 95% yakin bahwa pendugaan proporsi $\hat{p}$ berada 0.09 di sekitar proporsi sampel. Tentukan banyaknya contoh yang diperlukan.
 
 ___
 
@@ -338,14 +386,14 @@ $$(\hat{p}_1-\hat{p}_2)-z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}_1(1-\hat{p}_1)}{n
 
 Untuk mengetahui referensi suatu produk tertentu diambil contoh 1000 dari kota $A$ dan 1500 dari kota $B$, diperoleh proporsi yang menyukai produk tersebut di kota $A$ adalah $0.7$ dan di kota $B$ adalah $0.65$.
 
-Tentukan selang kepercayaan 95% bagi selisih proporsi yang menyukai produk tersebut
+Tentukan selang kepercayaan 90% bagi selisih proporsi yang menyukai produk tersebut
 
 ___
 
 Diketahui: <br>
 $n_A=1000$, $n_B=1500$, $\hat{p}_A=0.7$, dan $\hat{p}_B=0.65$
 
-$z_\frac{\alpha}{2}=z_{0,025}=1.645$
+$z_\frac{\alpha}{2}=z_{0,05}=1.645$
 
 
 $(\hat{p}_A-\hat{p}_B)-z_\frac{\alpha}{2}\sqrt{\dfrac{\hat{p}_A(1-\hat{p}_A)}{n_A}+\dfrac{\hat{p}_B(1-\hat{p}_B)}{n_B}}$
